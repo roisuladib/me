@@ -2,8 +2,13 @@
    "$schema": "https://json.schemastore.org/eslintrc",
    "extends": [
       "prettier",
+      "next",
       "next/core-web-vitals",
       "eslint:recommended",
-      "plugin:@next/next/recommended"
-   ]
+      "plugin:@next/next/recommended",
+      "plugin:storybook/recommended"
+   ],
+   "rules": {
+      "no-unused-vars": "warn"
+   }
 }

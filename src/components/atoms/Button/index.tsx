@@ -1,8 +1,6 @@
-import type {
-   ButtonHTMLAttributes,
-   JSXElementConstructor,
-   ReactElement,
-} from 'react';
+'use client';
+
+import type { ButtonHTMLAttributes, JSXElementConstructor, ReactElement } from 'react';
 import React, { forwardRef } from 'react';
 import type { VariantProps } from 'class-variance-authority';
 import { cva } from 'class-variance-authority';
@@ -10,18 +8,8 @@ import { cva } from 'class-variance-authority';
 const button = cva(['appearance-none', 'rounded-2xl'], {
    variants: {
       colorScheme: {
-         primary: [
-            'bg-blue-500',
-            'text-white',
-            'border-transparent',
-            'hover:bg-blue-600',
-         ],
-         secondary: [
-            'bg-white',
-            'text-gray-800',
-            'border-gray-400',
-            'hover:bg-gray-100',
-         ],
+         primary: ['bg-blue-500', 'text-white', 'border-transparent', 'hover:bg-blue-600'],
+         secondary: ['bg-white', 'text-gray-800', 'border-gray-400', 'hover:bg-gray-100'],
       },
       size: {
          small: ['text-sm', 'py-1', 'px-2'],
@@ -31,9 +19,7 @@ const button = cva(['appearance-none', 'rounded-2xl'], {
          solid: ['bg-green-500'],
       },
    },
-   compoundVariants: [
-      { colorScheme: 'primary', size: 'medium', class: 'uppercase' },
-   ],
+   compoundVariants: [{ colorScheme: 'primary', size: 'medium', class: 'uppercase' }],
    defaultVariants: {
       colorScheme: 'primary',
       size: 'medium',

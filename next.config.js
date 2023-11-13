@@ -5,6 +5,7 @@ const nextConfig = {
    experimental: {
       typedRoutes: true,
    },
+   reactStrictMode: false,
    pageExtensions: ['js', 'jsx', 'mdx', 'ts', 'tsx'],
 };
 

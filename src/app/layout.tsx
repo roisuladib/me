@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
 import { AnimatedCursor } from '$/components';
+import { classNames } from '$/utils';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -21,8 +22,11 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: PropsWithChildren) {
    return (
-      <html lang='en'>
-         <body className={inter.className} suppressHydrationWarning>
+      <html lang="en">
+         <body
+            className={classNames('antialiased', inter.className)}
+            suppressHydrationWarning
+         >
             {children}
             <AnimatedCursor />
          </body>
