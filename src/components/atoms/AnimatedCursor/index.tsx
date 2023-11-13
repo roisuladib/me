@@ -7,12 +7,12 @@ const AppAnimatedCursor = dynamic(() => import('react-animated-cursor'), {
 
 type AnimatedCursorProps = {
    theme?: 'donut' | 'blend';
-}
+};
 
 export const AnimatedCursor: FC<AnimatedCursorProps> = ({ theme }) => (
    <AppAnimatedCursor
       {...(theme === 'blend' && {
-         color: '#fff'
+         color: '#fff',
       })}
       innerSize={8}
       outerSize={35}
@@ -20,17 +20,17 @@ export const AnimatedCursor: FC<AnimatedCursorProps> = ({ theme }) => (
       outerScale={theme === 'donut' ? 2 : 1.7}
       outerAlpha={0}
       innerStyle={{
-         backgroundColor: 'var(--cursor-color)'
+         backgroundColor: 'var(--cursor-color)',
       }}
       outerStyle={{
          border: '3px solid var(--cursor-color)',
          ...(theme === 'blend' && {
-            mixBlendMode: 'exclusion'
-         })
-       }}
+            mixBlendMode: 'exclusion',
+         }),
+      }}
    />
-)
+);
 
 AnimatedCursor.defaultProps = {
-   theme: 'donut'
-}
+   theme: 'donut',
+};

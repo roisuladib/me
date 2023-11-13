@@ -1,0 +1,20 @@
+{
+   "$shemna": "http://json.schemastore.org/prettierrc",
+   "printWidth": 100,
+   "tabWidth": 3,
+   "singleQuote": true,
+   "trailingComma": "es5",
+   "arrowParens": "avoid",
+   "quoteProps": "consistent",
+   "proseWrap": "always",
+   "singleAttributePerLine": true,
+   "plugins": ["prettier-plugin-tailwindcss", "class-variance-authority"],
+   "overrides": [
+      {
+         "files": ["**/*.css", "**/*.scss", "**/*.pcss", "**/*.html"],
+         "options": {
+            "singleQuote": false
+         }
+      }
+   ]
+}
