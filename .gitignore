@@ -15,6 +15,7 @@
 
 # production
 /build
+/src/stories
 
 # misc
 .DS_Store
