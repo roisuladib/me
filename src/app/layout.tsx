@@ -4,6 +4,7 @@ import { Inter } from 'next/font/google';
 import './globals.css';
 import { AnimatedCursor } from '$/components';
 import { classNames } from '$/utils';
+import { Provider } from './provider';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -27,7 +28,7 @@ export default function RootLayout({ children }: PropsWithChildren) {
             className={classNames('antialiased', inter.className)}
             suppressHydrationWarning
          >
-            {children}
+            <Provider>{children}</Provider>
             <AnimatedCursor />
          </body>
       </html>
