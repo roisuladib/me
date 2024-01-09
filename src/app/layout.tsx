@@ -11,7 +11,7 @@ const fontSans = FontSans({
    variable: '--font-sans',
 });
 
-export const siteConfig = {
+const siteConfig = {
    title: 'Roisul Adib',
    description: 'Roisul Adib My portfolio as software engineer',
    url: 'https://roisuladib.vercel.app',
