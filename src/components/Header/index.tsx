@@ -6,7 +6,7 @@ export default function Header() {
       <div className="mx-auto max-w-7xl px-16">
          <div className="flex items-center justify-between gap-5">
             <Image
-               src="/next.svg"
+               src="/favicon/favicon-32x32.png"
                width={120}
                height={24}
                alt="Logo"

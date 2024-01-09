@@ -39,11 +39,31 @@ export const metadata: Metadata = {
    ],
    description: siteConfig.description,
    robots: { index: true, follow: true },
-   icons: {
-      icon: '/favicon/favicon.ico',
-      shortcut: '/favicon/favicon-16x16.png',
-      apple: '/favicon/apple-touch-icon.png',
-   },
+   icons: [
+      {
+         rel: 'apple-touch-ico',
+         url: '/favicon/apple-touch-icon.png',
+         type: 'image/png',
+         sizes: '180x180'
+      },
+      {
+         rel: 'icon',
+         url: '/favicon/favicon-32x32.png',
+         type: 'image/png',
+         sizes: '32x32'
+      },
+      {
+         rel: 'icon',
+         url: '/favicon/favicon-16x16.png',
+         type: 'image/png',
+         sizes: '16x16'
+      }
+   ],
+   // icons: {
+   //    icon: '/favicon/favicon.ico',
+   //    shortcut: '/favicon/favicon-16x16.png',
+   //    apple: '/favicon/apple-touch-icon.png',
+   // },
    manifest: '/favicon/site.webmanifest',
    openGraph: {
       url: siteConfig.url,
@@ -68,7 +88,7 @@ export default function RootLayout({ children }: PropsWithChildren) {
    return (
       <html
          lang="en"
-         className="dark"
+         // className="dark"
          suppressHydrationWarning>
          <body
             className={cn('min-h-screen bg-background font-sans antialiased', fontSans.variable)}>
