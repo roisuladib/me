@@ -1,12 +1,12 @@
 import type { PropsWithChildren } from 'react';
 import type { Metadata } from 'next';
+import dynamic from 'next/dynamic';
 import { Inter as FontSans } from 'next/font/google';
 import { cn } from '#/utils';
 
 import './globals.css';
-import dynamic from 'next/dynamic';
 
-export const fontSans = FontSans({
+const fontSans = FontSans({
    subsets: ['latin'],
    variable: '--font-sans',
 });
