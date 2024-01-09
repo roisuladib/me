@@ -23,7 +23,7 @@ export const metadata: Metadata = {
       default: siteConfig.title,
       template: `%s | ${siteConfig.title}`
    },
-   keywords: 'kokometric',
+   keywords: ['kokometric', 'roisuladib', 'adib', 'amik', 'amikjtc', 'amikjtcsemarang', 'typescript enthusiastically', 'frontend developer', 'frontend engineer', 'backend engineer', 'backend developer', 'backend engineer'],
    description: siteConfig.description,
    robots: { index: true, follow: true },
    icons: {
