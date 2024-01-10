@@ -2,7 +2,7 @@ import type { PropsWithChildren } from 'react';
 import type { Metadata } from 'next';
 import dynamic from 'next/dynamic';
 import { Inter as FontSans } from 'next/font/google';
-import { cn } from '#/utils';
+import { classNames } from '#/utils';
 
 import './globals.css';
 
@@ -44,20 +44,20 @@ export const metadata: Metadata = {
          rel: 'apple-touch-ico',
          url: '/favicon/apple-touch-icon.png',
          type: 'image/png',
-         sizes: '180x180'
+         sizes: '180x180',
       },
       {
          rel: 'icon',
          url: '/favicon/favicon-32x32.png',
          type: 'image/png',
-         sizes: '32x32'
+         sizes: '32x32',
       },
       {
          rel: 'icon',
          url: '/favicon/favicon-16x16.png',
          type: 'image/png',
-         sizes: '16x16'
-      }
+         sizes: '16x16',
+      },
    ],
    // icons: {
    //    icon: '/favicon/favicon.ico',
@@ -83,6 +83,7 @@ export const metadata: Metadata = {
 };
 
 const LazyHeader = dynamic(() => import('../components/Header'));
+const LazyFooter = dynamic(() => import('../components/Footer'));
 
 export default function RootLayout({ children }: PropsWithChildren) {
    return (
@@ -90,10 +91,12 @@ export default function RootLayout({ children }: PropsWithChildren) {
          lang="en"
          // className="dark"
          suppressHydrationWarning>
-         <body
-            className={cn('min-h-screen bg-background font-sans antialiased', fontSans.variable)}>
-            <LazyHeader />
-            {children}
+         <body className={classNames('bg-background font-sans antialiased', fontSans.variable)}>
+            <div className="flex min-h-screen flex-col overflow-hidden">
+               <LazyHeader />
+               {children}
+               <LazyFooter />
+            </div>
          </body>
       </html>
    );

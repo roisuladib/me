@@ -11,7 +11,7 @@ const variants = {
 export default function Template({ children }: PropsWithChildren) {
    return (
       <motion.main
-         className="flex min-h-screen flex-col items-center justify-between p-24"
+         className="flex grow flex-col"
          variants={variants}
          initial="hidden"
          animate="enter"
