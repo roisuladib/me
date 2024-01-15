@@ -92,7 +92,7 @@ export default function RootLayout({ children }: PropsWithChildren) {
          // className="dark"
          suppressHydrationWarning>
          <body className={classNames('bg-background font-sans antialiased', fontSans.variable)}>
-            <div className="flex min-h-screen flex-col overflow-hidden">
+            <div className="flex min-h-screen flex-col">
                <LazyHeader />
                {children}
                <LazyFooter />

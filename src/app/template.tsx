@@ -10,13 +10,15 @@ const variants = {
 
 export default function Template({ children }: PropsWithChildren) {
    return (
-      <motion.main
-         className="flex grow flex-col"
-         variants={variants}
-         initial="hidden"
-         animate="enter"
-         transition={{ type: 'linear' }}>
-         {children}
-      </motion.main>
+      <>
+         <motion.main
+            className="flex grow flex-col"
+            variants={variants}
+            initial="hidden"
+            animate="enter"
+            transition={{ type: 'linear' }}>
+            {children}
+         </motion.main>
+      </>
    );
 }

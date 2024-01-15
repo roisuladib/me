@@ -68,8 +68,17 @@
 
 @layer base {
    * {
-      @apply border-border;
+      @apply border-border outline-none;
    }
+   *::selection {
+      background-color: rgb(10 147 127 / 0.3);
+   }
+
+   td,
+   th {
+      @apply px-0 text-left font-normal;
+   }
+
    body {
       @apply bg-background text-foreground;
    }
