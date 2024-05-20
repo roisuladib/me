@@ -70,7 +70,6 @@ export const metadata: Metadata = {
       description: siteConfig.description,
       images: [`${siteConfig.url}/images/og.jpg`],
    },
-
 };
 
 const ProgressBar = dynamic(() => import('@/components/progress-bar'));
