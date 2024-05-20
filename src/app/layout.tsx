@@ -8,25 +8,69 @@ import dynamic from 'next/dynamic';
 import { Navbar } from '@/components/navbar';
 import { fontSans } from '@/config/fonts';
 import { siteConfig } from '@/config/site';
-
-import { Providers } from './providers';
 import type { Children } from '@/types';
 
+import { Providers } from './providers';
+
 export const metadata: Metadata = {
+   metadataBase: new URL(siteConfig.url),
    title: {
       default: siteConfig.name,
       template: `%s - ${siteConfig.name}`,
    },
-   description: siteConfig.description,
-   themeColor: [
-      // { media: '(prefers-color-scheme: light)', color: 'white' },
-      // { media: '(prefers-color-scheme: dark)', color: 'black' },
+   keywords: [
+      'kokometric',
+      'roisuladib',
+      'adib',
+      'amik',
+      'amikjtc',
+      'amikjtcsemarang',
+      'typescript enthusiastically',
+      'frontend developer',
+      'frontend engineer',
+      'backend engineer',
+      'backend developer',
+      'backend engineer',
    ],
-   icons: {
-      icon: '/favicon.ico',
-      shortcut: '/favicon-16x16.png',
-      apple: '/apple-touch-icon.png',
+   description: siteConfig.description,
+   robots: { index: true, follow: true },
+   icons: [
+      {
+         rel: 'apple-touch-ico',
+         url: '/favicon/apple-touch-icon.png',
+         type: 'image/png',
+         sizes: '180x180',
+      },
+      {
+         rel: 'icon',
+         url: '/favicon/favicon-32x32.png',
+         type: 'image/png',
+         sizes: '32x32',
+      },
+      {
+         rel: 'icon',
+         url: '/favicon/favicon-16x16.png',
+         type: 'image/png',
+         sizes: '16x16',
+      },
+   ],
+   manifest: '/favicon/site.webmanifest',
+   openGraph: {
+      url: siteConfig.url,
+      title: siteConfig.name,
+      description: siteConfig.description,
+      siteName: siteConfig.name,
+      images: [`${siteConfig.url}/images/og.jpg`],
+      type: 'website',
+      locale: 'en_US',
    },
+   twitter: {
+      card: 'summary_large_image',
+      title: siteConfig.name,
+      description: siteConfig.description,
+      images: [`${siteConfig.url}/images/og.jpg`],
+   },
+
 };
 
 const ProgressBar = dynamic(() => import('@/components/progress-bar'));
