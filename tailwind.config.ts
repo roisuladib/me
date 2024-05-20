@@ -1,100 +1,18 @@
+import { nextui } from '@nextui-org/theme';
 import type { Config } from 'tailwindcss';
-import { fontFamily } from 'tailwindcss/defaultTheme';
 
-const config: Config = {
-   darkMode: ['class'],
-   content: ['./src/app/**/*.{js,ts,jsx,tsx,mdx}', './src/components/**/*.{js,ts,jsx,tsx,mdx}'],
+const tailwindConfig: Config = {
+   content: [
+      './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
+      './src/components/**/*.{js,ts,jsx,tsx,mdx}',
+      './src/app/**/*.{js,ts,jsx,tsx,mdx}',
+      './node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}',
+   ],
    theme: {
-      container: {
-         center: true,
-         padding: '2rem',
-         screens: {
-            '2xl': '1400px',
-         },
-      },
-      extend: {
-         fontFamily: {
-            sans: ['var(--font-sans)', ...fontFamily.sans],
-         },
-         colors: {
-            border: 'var(--border)',
-            input: 'var(--input)',
-            ring: 'var(--ring)',
-            background: 'var(--background)',
-            foreground: 'var(--foreground)',
-            primary: {
-               DEFAULT: 'var(--primary)',
-               foreground: 'var(--primary-foreground)',
-            },
-            secondary: {
-               DEFAULT: 'var(--secondary)',
-               foreground: 'var(--secondary-foreground)',
-            },
-            destructive: {
-               DEFAULT: 'var(--destructive)',
-               foreground: 'var(--destructive-foreground)',
-            },
-            muted: {
-               DEFAULT: 'var(--muted)',
-               foreground: 'var(--muted-foreground)',
-            },
-            accent: {
-               DEFAULT: 'var(--accent)',
-               foreground: 'var(--accent-foreground)',
-            },
-            popover: {
-               DEFAULT: 'var(--popover)',
-               foreground: 'var(--popover-foreground)',
-            },
-            card: {
-               DEFAULT: 'var(--card)',
-               foreground: 'var(--card-foreground)',
-            },
-         },
-         borderRadius: {
-            lg: 'var(--radius)',
-            md: 'calc(var(--radius) - 2px)',
-            sm: 'calc(var(--radius) - 4px)',
-         },
-         keyframes: {
-            'accordion-down': {
-               from: { height: '0' },
-               to: { height: 'var(--radix-accordion-content-height)' },
-            },
-            'accordion-up': {
-               from: { height: 'var(--radix-accordion-content-height)' },
-               to: { height: '0' },
-            },
-            'fade-in-down': {
-               '0%': {
-                  opacity: '0',
-                  transform: 'translateY(-80px)',
-               },
-               '100%': {
-                  opacity: '1',
-                  transform: 'translateY(0)',
-               },
-            },
-            'fade-out-up': {
-               '0%': {
-                  opacity: '1',
-                  transform: 'translateY(0)',
-               },
-               '100%': {
-                  opacity: '0',
-                  transform: 'translateY(-80px)',
-               },
-            },
-         },
-         animation: {
-            'fade-in-down': 'fade-in-down 0.3s ease-out',
-            'fade-out-up': 'fade-out-up 1s ease-in-out',
-            'accordion-down': 'accordion-down 0.2s ease-out',
-            'accordion-up': 'accordion-up 0.2s ease-out',
-         },
-      },
+      extend: {},
    },
-   plugins: [],
+   darkMode: 'class',
+   plugins: [nextui()],
 };
 
-export default config;
+export default tailwindConfig;
